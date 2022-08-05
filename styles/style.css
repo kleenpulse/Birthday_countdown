@@ -1,0 +1,194 @@
+:root,
+* {
+  --smaller: .75;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  --bg: linear-gradient(180deg,
+          #0b0b0b,
+          #848383);
+  --bgdark: linear-gradient(90deg,
+          #ffe100,
+          #fe03b9,
+          #03ffff);
+  --trans: all 400ms;
+  /* Light theme */
+  --c-light-text: #333;
+  --c-light-background: #d9d9d9;
+  --c-light-interactive: mediumvioletred;
+  /* Dark Theme */
+  --c-dark-text: #fff;
+  --c-dark-background: #333;
+  --c-dark-interactive: palegreen;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: var(--trans);
+  /* Make the light theme the default */
+  --c-text: var(--light-text);
+  --c-background: var(--c-light-background);
+  --c-interactive: var(--c-light-interactive);
+  color: var(--c-text);
+  background-color: var(--c-background);
+}
+.theme-container .container {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5rem 3rem;
+  transition: var(--trans);
+  border-radius: 50px;
+  box-shadow: 41px 41px 82px #b8b8b8, -41px -41px 82px #fafafa;
+}
+.theme-container .container h1,
+.theme-container .container li,
+.theme-container .container li > span {
+  background: var(--bg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.theme-container h1 {
+  font-weight: normal;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  font-size: 4.5rem;
+}
+.theme-container li {
+  display: inline-block;
+  font-size: 2.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+.theme-container li span {
+  display: block;
+  font-size: 5.5rem;
+}
+.theme-container .emoji {
+  display: none;
+  padding: 1rem;
+}
+.theme-container .emoji span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .theme-container {
+    padding: 0 3rem;
+    transition: var(--trans);
+  }
+  .theme-container .container h1 {
+    font-size: calc(3.5rem * var(--smaller));
+  }
+  .theme-container .container li {
+    font-size: calc(2.125rem * var(--smaller));
+  }
+  .theme-container .container li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+@media all and (max-width: 843px) {
+  .theme-container {
+    padding: 0 2rem;
+    transition: var(--trans);
+  }
+  .theme-container .container {
+    padding: 2rem 1rem;
+  }
+  .theme-container .container h1 {
+    font-size: calc(2.5rem * var(--smaller));
+  }
+  .theme-container .container li {
+    font-size: calc(2.125rem * var(--smaller));
+  }
+  .theme-container .container li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+@media all and (max-width: 680px) {
+  .theme-container {
+    padding: 0 !important;
+    transition: var(--trans);
+  }
+  .theme-container .container {
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  .theme-container .container h1 {
+    font-size: calc(5vw * var(--smaller));
+  }
+  .theme-container .container ul {
+    display: grid;
+  }
+  .theme-container .container li {
+    font-size: calc(6vw * var(--smaller));
+  }
+  .theme-container .container li span {
+    font-size: calc(8vw * var(--smaller));
+  }
+}
+.dark-mode-label {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid var(--c-light-text);
+  padding: 5px;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.dark-mode-checkbox:checked ~ .theme-container {
+  /* Override the default theme */
+  --c-text: var(--c-dark-text);
+  --c-background: var(--c-dark-background);
+  --c-interactive: var(--c-dark-interactive);
+  transition: var(--trans);
+  background: #05012a;
+}
+.dark-mode-checkbox:checked ~ .theme-container .container {
+  position: relative;
+  box-shadow: 41px 41px 82px #000000, -41px -41px 82px #01014e;
+}
+.dark-mode-checkbox:checked ~ .theme-container .container h1,
+.dark-mode-checkbox:checked ~ .theme-container .container li,
+.dark-mode-checkbox:checked ~ .theme-container .container li > span {
+  background: var(--bgdark);
+  isolation: isolate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}/*# sourceMappingURL=style.css.map */

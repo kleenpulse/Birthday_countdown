@@ -1,0 +1,30 @@
+.dark-mode-checkbox:checked~.theme-container {
+    /* Override the default theme */
+    --c-text: var(--c-dark-text);
+    --c-background: var(--c-dark-background);
+    --c-interactive: var(--c-dark-interactive);
+    $bg: #05012a;
+    transition: var(--trans);
+    background: $bg;
+
+    .container {
+        position: relative;
+        box-shadow: 41px 41px 82px #000000,
+            -41px -41px 82px #01014e;
+
+        h1,
+        li,
+        li>span {
+
+            background: var(--bgdark);
+            isolation: isolate;
+            
+            
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+
+        }
+    }
+
+}
