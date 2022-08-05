@@ -76,7 +76,7 @@ body {
 
         h1,
         li,
-        li>span {
+        #countdown>span {
 
             background: var(--bg);
             -webkit-background-clip: text;
@@ -91,6 +91,7 @@ body {
         letter-spacing: .125rem;
         text-transform: uppercase;
         font-size: 4.5rem;
+     
     }
 
     li {

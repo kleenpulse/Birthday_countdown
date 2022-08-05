@@ -59,7 +59,7 @@ body {
 }
 .theme-container .container h1,
 .theme-container .container li,
-.theme-container .container li > span {
+.theme-container .container #countdown > span {
   background: var(--bg);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
