@@ -83,6 +83,7 @@ body {
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+       
 
     }
 
@@ -143,6 +144,12 @@ body {
     }
 
 }
+ @media (max-width:1440px) {
+     .theme-container{
+        padding: 0 5rem;
+        transition: var(--trans);
+     }
+ }
 
 @media all and (max-width: 843px) {
 

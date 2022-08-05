@@ -106,6 +106,12 @@ body {
     font-size: calc(3.375rem * var(--smaller));
   }
 }
+@media (max-width: 1440px) {
+  .theme-container {
+    padding: 0 5rem;
+    transition: var(--trans);
+  }
+}
 @media all and (max-width: 843px) {
   .theme-container {
     padding: 0 2rem;
