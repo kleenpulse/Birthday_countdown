@@ -41,6 +41,7 @@ body {
   justify-content: center;
   flex-direction: column;
   transition: var(--trans);
+  cursor: none;
   /* Make the light theme the default */
   --c-text: var(--light-text);
   --c-background: var(--c-light-background);
